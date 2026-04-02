@@ -1,6 +1,7 @@
 import { Hono } from "https://esm.sh/hono";
 import sqlite from "https://esm.town/v/std/sqlite@14-main/main.ts";
 import { blob } from "https://esm.town/v/std/blob";
+import { email } from "https://esm.town/v/std/email";
 
 const COMMENTS_TABLE = "bant_guestbook_comments_1";
 const CANDLES_KEY = "bant_guestbook_candles";
@@ -36,6 +37,12 @@ app.post("/api/comments", async (c) => {
     `INSERT INTO ${COMMENTS_TABLE} (author, body) VALUES (?, ?)`,
     [author.trim(), body.trim()],
   );
+
+  await email({
+    subject: `New guestbook message from ${author.trim()}`,
+    text: body.trim(),
+  });
+
   return c.json({ ok: true }, 201);
 });
 
