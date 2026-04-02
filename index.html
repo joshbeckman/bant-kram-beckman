@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bant Kram-Beckman</title>
+    <meta name="description" content="A memorial for Bant Kram-Beckman, 2011–2026. Our sassy tortie cat of 15 years.">
+    <link rel="icon" href="cat.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+            background: #f7f3ed;
+            color: #3b3530;
+            padding: 3rem 2rem;
+            line-height: 1.7;
+        }
+
+        main {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.25rem;
+            text-align: center;
+        }
+
+        .years {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #8a7e72;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 2rem 0;
+        }
+
+        video, audio {
+            width: 100%;
+            display: block;
+            margin: 2rem 0;
+        }
+        img, video {
+            border-radius: 2px;
+          box-shadow:
+            0px 0px 0px 1px rgba(0, 0, 0, 0.06),
+            0px 1px 2px -1px rgba(0, 0, 0, 0.06),
+            0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+        }
+
+        .sign-off {
+            margin-top: 2rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .sign-off p {
+            margin-bottom: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #d8cfc3;
+            margin: 3rem 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid #d8cfc3;
+        }
+
+        a:hover {
+            border-bottom-color: #3b3530;
+        }
+
+        .guestbook {
+            margin-top: 1rem;
+        }
+
+        .guestbook h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .candle-icon {
+            width: 2rem;
+            height: auto;
+            margin: 0;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .candle-row {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .candle-btn {
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 400;
+            background: none;
+            border: 1px solid #d8cfc3;
+            color: inherit;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .candle-btn:hover:not(:disabled) {
+            border-color: #3b3530;
+        }
+
+        .candle-btn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .candle-count {
+            font-size: 0.9rem;
+            color: #8a7e72;
+        }
+
+        .comments {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .comment {
+            border-left: 2px solid #d8cfc3;
+            padding-left: 1rem;
+        }
+
+        .comment-body {
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+        }
+
+        .comment-meta {
+            font-size: 0.85rem;
+            color: #8a7e72;
+            margin-top: 0.25rem;
+        }
+
+        .guestbook form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .guestbook input,
+        .guestbook textarea {
+            font-family: inherit;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d8cfc3;
+            border-radius: 2px;
+            background: transparent;
+            color: inherit;
+        }
+
+        .guestbook textarea {
+            min-height: 5rem;
+            resize: vertical;
+        }
+
+        .guestbook input:focus,
+        .guestbook textarea:focus {
+            outline: none;
+            border-color: #8a7e72;
+        }
+
+        .guestbook button[type="submit"] {
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 400;
+            background: none;
+            border: 1px solid #d8cfc3;
+            color: inherit;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 2px;
+            align-self: flex-start;
+        }
+
+        .guestbook button[type="submit"]:hover {
+            border-color: #3b3530;
+        }
+
+        .form-error {
+            font-size: 0.85rem;
+            color: #a04040;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1f1c19;
+                color: #e2dbd2;
+            }
+
+            .years {
+                color: #a09588;
+            }
+
+            hr {
+                border-top-color: #3d3630;
+            }
+
+            a {
+                border-bottom-color: #3d3630;
+            }
+
+            a:hover {
+                border-bottom-color: #e2dbd2;
+            }
+            img, video {
+              box-shadow:
+                0px 0px 0px 1px rgba(255, 255, 255, 0.06),
+                0px 1px 2px -1px rgba(255, 255, 255, 0.06),
+                0px 2px 4px 0px rgba(255, 255, 255, 0.04);
+            }
+
+            .candle-btn {
+                border-color: #3d3630;
+            }
+
+            .candle-btn:hover:not(:disabled) {
+                border-color: #e2dbd2;
+            }
+
+            .candle-count,
+            .comment-meta {
+                color: #a09588;
+            }
+
+            .comment {
+                border-left-color: #3d3630;
+            }
+
+            .guestbook input,
+            .guestbook textarea,
+            .guestbook button[type="submit"] {
+                border-color: #3d3630;
+            }
+
+            .guestbook input:focus,
+            .guestbook textarea:focus {
+                border-color: #a09588;
+            }
+
+            .guestbook button[type="submit"]:hover {
+                border-color: #e2dbd2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Bant <a href="https://www.kram-beckman.com" target="_blank">Kram-Beckman</a></h1>
+        <div class="years">2011–2026</div>
+
+        <img src="bant-lounging.jpeg" alt="Bant">
+
+        <p>Bant was our sassy tortie cat of 15 years. With her green-and-yellow eyes and black-and-gold fur coat, she could blend in to the dark of night or appear sprinkled with sun. She had a kink at the tip of her tail, and her coloring made it look like she was wearing 1&frac12; socks on her back paws.</p>
+
+        <img src="bant-lounging-in-yard.jpeg" alt="Bant lounging in the yard">
+
+        <p>She is survived by her little brother Fox (whom she hated but secretly loved from when he was a kitten), her little sister Aria, and her loving parents/friends/servants Marybeth and Josh.</p>
+
+        <video controls src="bant-fighting-fox-slow-mo.mp4"></video>
+
+        <img src="bant-and-fox.jpeg" alt="Bant and Fox">
+
+        <p>Bant started life somewhere on the streets or in the fields around Champaign, IL and was rescued by the PAWS shelter. When Josh and Marybeth visited the shelter for their anniversary and saw this 6 month-old kitten, she chose them by affectionately meowing and rubbing them from inside her cage and then jumping and playing around the room with them once set free. She loved rough play from Josh then and throughout the rest of her life.</p>
+
+        <video controls src="bant-first-night-at-home.mp4"></video>
+
+        <p>At the shelter she was named "Karen" (as she and all her sisters were <em>Mean Girls</em>), but Bant was then named for <a href="https://www.thejediencyclopedia.com/character.php?Name=Bant+Eerin">a little Jedi</a> in <a href="https://en.wikipedia.org/wiki/Star_Wars:_Jedi_Apprentice">a book series</a> who was known for her great agility and friendship.</p>
+
+        <img src="kitten-bant-sleeping.jpeg" alt="Bant, as a kitten, sleeping">
+
+        <p>Throughout life, she would jump anywhere, fetching toys, climbing to the top of full screen doors in attempts to get outside, but she never ran away.</p>
+
+        <p>And oh, whas she smart. She would only drink running water, as still water was too boring.</p>
+
+        <video controls src="bant-drinking-water-slow-mo.mp4"></video>
+
+        <p>She was one of the most vocal cats ever, always talking back to people in complaint or approval. Often, she would swat at Josh in disgust, but never used her claws on people; she was too in control for that. She would always come greet people at the door when they arrived home, no matter the hour.</p>
+
+        <video controls src="bant-meowing-while-held.mp4"></video>
+
+        <img src="bant-and-josh-sleeping-on-floor.jpeg" alt="Bant and Josh">
+
+        <p>Outside, she enjoyed sunning herself in the yard, listlessly chittering at the birds and aggressively hunting the rats.</p>
+
+        <img src="bant-in-yard-sun.jpeg" alt="Bant in the yard">
+
+        <video controls src="bant-squeaking.mp4"></video>
+
+        <p>Inside, she enjoyed lying in Marybeth's lap and having her face rubbed by Josh. She was <em>always</em> ready to give a head bump and would never hesitate to jump down from a perch to play on the floor.</p>
+
+        <img src="bant-sleeping-on-marybeth-2.jpeg" alt="Bant sleeping with Marybeth">
+
+        <img src="bant-peeking-from-blanket.jpeg" alt="Bant peeking from blankets">
+
+        <p>Bant slept in between her parents every night since she was a kitten, and would demand they go to bed so that she could. She followed them through 7 different homes (one with a duck, another with a dog) over the years, and many more life changes.</p>
+
+        <img src="bant-marybeth-on-wedding-day.jpeg" alt="Bant on Marybeth's wedding day">
+
+        <p>Bant was healthy and agile until late March 2026, when a vet visit uncovered an aggressive lymphoma and she declined within a week. She passed peacefully at home, lying on her leather jacket, surrounded by her family and favorite toy that she carried with her since that Champaign shelter.</p>
+
+        <audio controls src="bant-play-voice.m4a"></audio>
+
+        <video controls src="bant-purring.mp4"></video>
+
+        <video controls src="bant-chittering-at-birds.mp4"></video>
+
+        <p>You can carry on her spirit by never accepting less than what you deserve, luxuriating in the sun, and leaning on those you love.</p>
+
+        <p>Bant was more partner-in-life than pet, the first to join our family, and our home will forever miss her voice.</p>
+
+        <div class="sign-off">
+            <p>With Eternal Love,</p>
+            <p>Josh, Marybeth, Aria, and Fox</p>
+        </div>
+
+        <img src="tails-and-hands-in-bed.jpeg" alt="One of Bant's final nights, lying together as a family in bed">
+
+        <hr>
+
+        <section class="guestbook">
+            <h2>Guestbook</h2>
+
+            <div class="candle-row">
+                <img src="candle.gif" alt="candle" class="candle-icon">
+                <span class="candle-count" id="candle-count" style="margin-right:1.25rem"></span>
+                <button class="candle-btn" id="candle-btn" onclick="lightCandle()">Light a candle</button>
+            </div>
+
+            <div class="comments" id="comments"></div>
+
+            <form id="comment-form" onsubmit="submitComment(event)">
+                <input type="text" name="author" placeholder="Your name" required>
+                <textarea name="body" placeholder="A memory or message for Bant or the family" required></textarea>
+                <input type="text" name="born" placeholder="When was Bant born? (year)" required>
+                <div class="form-error" id="form-error"></div>
+                <button type="submit">Leave a message</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const API = "https://joshbeckman--13ae51ce2ea711f19bb842dde27851f2.web.val.run";
+
+        async function loadComments() {
+            try {
+                const res = await fetch(API + "/api/comments");
+                const comments = await res.json();
+                const el = document.getElementById("comments");
+                el.innerHTML = comments.map(c =>
+                    `<div class="comment">
+                        <div class="comment-body">${escapeHtml(c.body)}</div>
+                        <div class="comment-meta">${escapeHtml(c.author)} &middot; ${formatDate(c.created_at)}</div>
+                    </div>`
+                ).join("");
+            } catch (e) {}
+        }
+
+        async function submitComment(e) {
+            e.preventDefault();
+            const form = e.target;
+            const errEl = document.getElementById("form-error");
+            errEl.textContent = "";
+
+            const data = {
+                author: form.author.value,
+                body: form.body.value,
+                born: form.born.value,
+            };
+
+            try {
+                const res = await fetch(API + "/api/comments", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                });
+                if (!res.ok) {
+                    const err = await res.json();
+                    errEl.textContent = err.error || "Something went wrong";
+                    return;
+                }
+                form.reset();
+                await loadComments();
+            } catch (e) {
+                errEl.textContent = "Something went wrong";
+            }
+        }
+
+        async function loadCandles() {
+            try {
+                const res = await fetch(API + "/api/candles");
+                const { count } = await res.json();
+                const countEl = document.getElementById("candle-count");
+                countEl.textContent = count > 0 ? count + (count === 1 ? " candle lit" : " candles lit") : "";
+                if (localStorage.getItem("bant-candle-lit")) {
+                    const btn = document.getElementById("candle-btn");
+                    btn.disabled = true;
+                    btn.textContent = "Thank you";
+                }
+            } catch (e) {}
+        }
+
+        async function lightCandle() {
+            try {
+                await fetch(API + "/api/candles", { method: "POST" });
+                localStorage.setItem("bant-candle-lit", "1");
+                await loadCandles();
+            } catch (e) {}
+        }
+
+        function escapeHtml(s) {
+            const d = document.createElement("div");
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        function formatDate(s) {
+            try {
+                const d = new Date(s.replace(" ", "T") + "Z");
+                if (isNaN(d)) return s;
+                return d.toLocaleDateString(undefined, {
+                    year: "numeric", month: "short", day: "numeric"
+                });
+            } catch (e) { return s; }
+        }
+
+        loadComments();
+        loadCandles();
+    </script>
+</body>
+</html>
